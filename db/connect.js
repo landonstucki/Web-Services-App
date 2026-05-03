@@ -1,0 +1,17 @@
+const { MongoClient } = require('mongodb');
+
+const client = new MongoClient(process.env.MONGODB_URI);
+
+let db;
+
+async function connectDB() {
+  if (!db) {
+    await client.connect();
+    db = client.db('cse340'); // uses /cse340 from your .env URI
+    console.log('Connected to MongoDB');
+  }
+
+  return db;
+}
+
+module.exports = connectDB;

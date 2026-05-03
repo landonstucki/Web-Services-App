@@ -1,0 +1,7 @@
+### Get all contacts
+GET http://localhost:3000/contacts
+
+### Get Landon contact
+GET http://localhost:3000/contacts/single?id=69f6a69b874f9b824237b793
+
+
