@@ -1,7 +1,15 @@
-### Get all contacts
+### Get all contacts LocalHost
 GET http://localhost:3000/contacts
 
-### Get Landon contact
+### Get Landon contact LocalHost
 GET http://localhost:3000/contacts/single?id=69f6a69b874f9b824237b793
 
+
+
+
+### Get all contacts Render
+GET https://web-services-app.onrender.com/contacts
+
+### Get Landon contact Render
+GET https://web-services-app.onrender.com/contacts/single?id=69f6a69b874f9b824237b793
 
