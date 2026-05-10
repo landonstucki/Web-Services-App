@@ -1,15 +1,84 @@
 ### Get all contacts LocalHost
+# This request asks the local server for every contact in the database.
+# Method: GET (read data)
 GET http://localhost:3000/contacts
 
 ### Get Landon contact LocalHost
+# This request gets a single contact by its MongoDB _id using a query string.
+# Replace the id below with a real one returned from your database.
 GET http://localhost:3000/contacts/single?id=69f6a69b874f9b824237b793
 
 
 
+### Create contact LocalHost
+# This request creates a new contact in the database.
+# Method: POST (create data)
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+	"firstName": "David",
+	"lastName": "Blane",
+	"email": "David@example.com",
+	"favoriteColor": "blue",
+	"birthday": "1990-01-01"
+}
+
+### Update contact LocalHost (replace with real id)
+# This request updates an existing contact by id.
+# Method: PUT (replace/update data)
+PUT http://localhost:3000/contacts/69f6a69b874f9b824237b795
+Content-Type: application/json
+
+{
+	"firstName": "Jane",
+	"lastName": "Stucki",
+	"email": "newjane@email.com",
+	"favoriteColor": "green",
+	"birthday": "1990-01-01"
+}
+
+### Delete contact LocalHost (replace with real id)
+# This request deletes a contact by id.
+# Method: DELETE (remove data)
+DELETE http://localhost:3000/contacts/69f6a69b874f9b824237b793
+
 
 ### Get all contacts Render
+# Same as local GET, but against your deployed Render URL.
 GET https://web-services-app.onrender.com/contacts
 
 ### Get Landon contact Render
+# Get a single contact by _id in the deployed environment.
 GET https://web-services-app.onrender.com/contacts/single?id=69f6a69b874f9b824237b793
+
+### Create contact Render
+# Create a new contact on the deployed server.
+POST https://web-services-app.onrender.com/contacts
+Content-Type: application/json
+
+{
+	"firstName": "Demo",
+	"lastName": "User",
+	"email": "demo@example.com",
+	"favoriteColor": "red",
+	"birthday": "1992-05-05"
+}
+
+### Update contact Render (replace with real id)
+# Update an existing contact on the deployed server.
+PUT https://web-services-app.onrender.com/contacts/69f6a69b874f9b824237b793
+Content-Type: application/json
+
+{
+	"firstName": "Demo",
+	"lastName": "User",
+	"email": "demo+updated@example.com",
+	"favoriteColor": "orange",
+	"birthday": "1992-05-05"
+}
+
+### Delete contact Render (replace with real id)
+# Delete a contact by id on the deployed server.
+DELETE https://web-services-app.onrender.com/contacts/69f6a69b874f9b824237b793
 
