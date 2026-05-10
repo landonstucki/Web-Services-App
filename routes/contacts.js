@@ -64,7 +64,7 @@ router.post("/", async (req, res) => {
 });
 
 // PUT update contact by id
-router.put(":id", async (req, res) => {
+router.put("/:id", async (req, res) => {
   // Handle PUT /contacts/:id to update a contact
   try {
     const id = req.params.id; // Read id from the URL path
@@ -100,7 +100,7 @@ router.put(":id", async (req, res) => {
 });
 
 // DELETE contact by id
-router.delete(":id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   // Handle DELETE /contacts/:id to remove a contact
   try {
     const id = req.params.id; // Read id from the URL path

@@ -27,7 +27,7 @@ Content-Type: application/json
 ### Update contact LocalHost (replace with real id)
 # This request updates an existing contact by id.
 # Method: PUT (replace/update data)
-PUT http://localhost:3000/contacts/69f6a69b874f9b824237b795
+PUT http://localhost:3000/contacts/69ffee8a29e877480d7935b7
 Content-Type: application/json
 
 {
@@ -58,23 +58,23 @@ POST https://web-services-app.onrender.com/contacts
 Content-Type: application/json
 
 {
-	"firstName": "Demo",
-	"lastName": "User",
-	"email": "demo@example.com",
-	"favoriteColor": "red",
+	"firstName": "stacy",
+	"lastName": "mom",
+	"email": "gotitgoingon@example.com",
+	"favoriteColor": "blue",
 	"birthday": "1992-05-05"
 }
 
 ### Update contact Render (replace with real id)
 # Update an existing contact on the deployed server.
-PUT https://web-services-app.onrender.com/contacts/69f6a69b874f9b824237b793
+PUT https://web-services-app.onrender.com/contacts/69ffed46b3556299e1983ca6
 Content-Type: application/json
 
 {
-	"firstName": "Demo",
-	"lastName": "User",
-	"email": "demo+updated@example.com",
-	"favoriteColor": "orange",
+	"firstName": "stacy",
+	"lastName": "mom",
+	"email": "stacysmom@example.com",
+	"favoriteColor": "blue",
 	"birthday": "1992-05-05"
 }
 
