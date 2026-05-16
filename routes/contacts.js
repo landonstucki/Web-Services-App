@@ -5,6 +5,15 @@ const { ObjectId } = require("mongodb"); // ObjectId type used for MongoDB docum
 
 // GET all contacts
 router.get("/", async (req, res) => {
+  /*
+    #swagger.tags = ['Contacts']
+    #swagger.summary = 'Get all contacts'
+    #swagger.description = 'Returns an array of every contact in the database.'
+    #swagger.responses[200] = {
+      description: 'Array of contact objects',
+      schema: [{ $ref: '#/definitions/Contact' }]
+    }
+  */
   // Handle GET /contacts
   const db = await connectDB(); // Connect to the database
   const contacts = await db.collection("contacts").find().toArray(); // Fetch all docs in 'contacts' as an array
@@ -13,6 +22,22 @@ router.get("/", async (req, res) => {
 
 // GET single contact
 router.get("/single", async (req, res) => {
+  /*
+    #swagger.tags = ['Contacts']
+    #swagger.summary = 'Get a contact by ID'
+    #swagger.description = 'Returns a single contact matching the provided MongoDB _id query parameter.'
+    #swagger.parameters['id'] = {
+      in: 'query',
+      description: 'MongoDB ObjectId of the contact',
+      required: true,
+      type: 'string'
+    }
+    #swagger.responses[200] = {
+      description: 'A single contact object',
+      schema: { $ref: '#/definitions/Contact' }
+    }
+    #swagger.responses[404] = { description: 'Contact not found' }
+  */
   // Handle GET /contacts/single?id=<id>
   const db = await connectDB(); // Ensure we have a DB connection
   const id = req.query.id; // Read the id from the query string
@@ -44,6 +69,19 @@ function validateContact(body) {
 
 // POST create contact
 router.post("/", async (req, res) => {
+  /*
+    #swagger.tags = ['Contacts']
+    #swagger.summary = 'Create a new contact'
+    #swagger.description = 'Adds a new contact document to the database.'
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Contact data',
+      required: true,
+      schema: { $ref: '#/definitions/ContactInput' }
+    }
+    #swagger.responses[201] = { description: 'Contact created — returns the new document id' }
+    #swagger.responses[400] = { description: 'Missing required fields' }
+  */
   // Handle POST /contacts to add a new contact
   try {
     const { ok, missing } = validateContact(req.body); // Validate incoming data
@@ -65,6 +103,26 @@ router.post("/", async (req, res) => {
 
 // PUT update contact by id
 router.put("/:id", async (req, res) => {
+  /*
+    #swagger.tags = ['Contacts']
+    #swagger.summary = 'Update a contact by ID'
+    #swagger.description = 'Replaces the fields of an existing contact identified by its MongoDB _id.'
+    #swagger.parameters['id'] = {
+      in: 'path',
+      description: 'MongoDB ObjectId of the contact to update',
+      required: true,
+      type: 'string'
+    }
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Updated contact data',
+      required: true,
+      schema: { $ref: '#/definitions/ContactInput' }
+    }
+    #swagger.responses[204] = { description: 'Contact updated successfully' }
+    #swagger.responses[400] = { description: 'Invalid id or missing required fields' }
+    #swagger.responses[404] = { description: 'Contact not found' }
+  */
   // Handle PUT /contacts/:id to update a contact
   try {
     const id = req.params.id; // Read id from the URL path
@@ -101,6 +159,20 @@ router.put("/:id", async (req, res) => {
 
 // DELETE contact by id
 router.delete("/:id", async (req, res) => {
+  /*
+    #swagger.tags = ['Contacts']
+    #swagger.summary = 'Delete a contact by ID'
+    #swagger.description = 'Permanently removes the contact with the given MongoDB _id from the database.'
+    #swagger.parameters['id'] = {
+      in: 'path',
+      description: 'MongoDB ObjectId of the contact to delete',
+      required: true,
+      type: 'string'
+    }
+    #swagger.responses[200] = { description: 'Contact deleted successfully' }
+    #swagger.responses[400] = { description: 'Invalid id format' }
+    #swagger.responses[404] = { description: 'Contact not found' }
+  */
   // Handle DELETE /contacts/:id to remove a contact
   try {
     const id = req.params.id; // Read id from the URL path

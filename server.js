@@ -2,6 +2,8 @@
 
 const express = require("express"); // Import the Express web framework
 const dotenv = require("dotenv"); // Import dotenv to load environment variables from a .env file
+const swaggerUi = require("swagger-ui-express"); // Swagger UI middleware
+const swaggerDocument = require("./swagger-output.json"); // Auto-generated Swagger spec
 
 dotenv.config(); // MUST be before anything uses process.env (loads .env into process.env)
 
@@ -10,6 +12,9 @@ const port = process.env.PORT || 3000; // Use PORT from env or default to 3000
 
 // Middleware
 app.use(express.json()); // Parse incoming request bodies as JSON
+
+// Swagger API docs
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Routes
 const nameRoute = require("./routes"); // Import the root (/) router

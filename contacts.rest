@@ -67,18 +67,18 @@ Content-Type: application/json
 
 ### Update contact Render (replace with real id)
 # Update an existing contact on the deployed server.
-PUT https://web-services-app.onrender.com/contacts/69ffed46b3556299e1983ca6
+PUT https://web-services-app.onrender.com/contacts/69ffefddf2f76247bdd03529
 Content-Type: application/json
 
 {
 	"firstName": "stacy",
 	"lastName": "mom",
-	"email": "stacysmom@example.com",
-	"favoriteColor": "blue",
+	"email": "realestate@stacy.com",
+	"favoriteColor": "red",
 	"birthday": "1992-05-05"
 }
 
 ### Delete contact Render (replace with real id)
 # Delete a contact by id on the deployed server.
-DELETE https://web-services-app.onrender.com/contacts/69f6a69b874f9b824237b793
+DELETE https://web-services-app.onrender.com/contacts/69ffee8a29e877480d7935b7
 
