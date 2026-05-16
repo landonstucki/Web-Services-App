@@ -101,8 +101,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-
-
 // PUT update contact by id
 router.put("/:id", async (req, res) => {
   /*

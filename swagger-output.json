@@ -7,9 +7,7 @@
   },
   "host": "web-services-app.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/": {
       "get": {
@@ -23,9 +21,7 @@
     },
     "/contacts/": {
       "get": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Get all contacts",
         "description": "Returns an array of every contact in the database.",
         "responses": {
@@ -44,9 +40,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Create a new contact",
         "description": "Adds a new contact document to the database.",
         "parameters": [
@@ -75,9 +69,7 @@
     },
     "/contacts/single": {
       "get": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Get a contact by ID",
         "description": "Returns a single contact matching the provided MongoDB _id query parameter.",
         "parameters": [
@@ -104,9 +96,7 @@
     },
     "/contacts/{id}": {
       "put": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Update a contact by ID",
         "description": "Replaces the fields of an existing contact identified by its MongoDB _id.",
         "parameters": [
@@ -143,9 +133,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Delete a contact by ID",
         "description": "Permanently removes the contact with the given MongoDB _id from the database.",
         "parameters": [
@@ -188,7 +176,13 @@
     },
     "ContactInput": {
       "type": "object",
-      "required": ["firstName", "lastName", "email", "favoriteColor", "birthday"],
+      "required": [
+        "firstName",
+        "lastName",
+        "email",
+        "favoriteColor",
+        "birthday"
+      ],
       "properties": {
         "firstName": { "type": "string", "example": "Jane" },
         "lastName": { "type": "string", "example": "Doe" },

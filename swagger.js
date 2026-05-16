@@ -24,18 +24,17 @@ const doc = {
   // Instead of copy-pasting the same field list on every route, you define it
   // once here and reference it by name (e.g. $ref: '#/definitions/Contact').
   definitions: {
-
     // "Contact" describes what a contact looks like when it comes OUT of the database.
     // It includes _id because MongoDB adds that automatically when a document is saved.
     Contact: {
       type: "object",
       properties: {
-        _id:           { type: "string", example: "64b1f2c3e4b0a1b2c3d4e5f6" },
-        firstName:     { type: "string", example: "Jane" },
-        lastName:      { type: "string", example: "Doe" },
-        email:         { type: "string", example: "jane@example.com" },
+        _id: { type: "string", example: "64b1f2c3e4b0a1b2c3d4e5f6" },
+        firstName: { type: "string", example: "Jane" },
+        lastName: { type: "string", example: "Doe" },
+        email: { type: "string", example: "jane@example.com" },
         favoriteColor: { type: "string", example: "blue" },
-        birthday:      { type: "string", example: "1990-01-01" },
+        birthday: { type: "string", example: "1990-01-01" },
       },
     },
 
@@ -46,11 +45,11 @@ const doc = {
       type: "object",
       required: ["firstName", "lastName", "email", "favoriteColor", "birthday"],
       properties: {
-        firstName:     { type: "string", example: "Jane" },
-        lastName:      { type: "string", example: "Doe" },
-        email:         { type: "string", example: "jane@example.com" },
+        firstName: { type: "string", example: "Jane" },
+        lastName: { type: "string", example: "Doe" },
+        email: { type: "string", example: "jane@example.com" },
         favoriteColor: { type: "string", example: "blue" },
-        birthday:      { type: "string", example: "1990-01-01" },
+        birthday: { type: "string", example: "1990-01-01" },
       },
     },
   },
